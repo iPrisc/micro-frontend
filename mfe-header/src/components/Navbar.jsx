@@ -7,28 +7,9 @@ function Navbar() {
   const [cartCount, setCartCount] = useState(0);
 
   useEffect(() => {
-  }, []);
-
-  useEffect(() => {
-    // TODO 1 : s'abonner à game:joined → incrémenter le badge notifications
-    const onGameJoined = () => {
-      setNotifications(prev => prev + 1);
-    };
-
-    // TODO 2 : s'abonner à cart:updated → mettre à jour le badge panier (count)
-    const onCartUpdated = (payload) => {
-      const count = payload?.count ?? payload?.detail?.count ?? 0;
-      setCartCount(count);
-    };
-
-    eventBus.on('game:joined', onGameJoined);
-    eventBus.on('cart:updated', onCartUpdated);
-
-    // TODO 3 : retourner le cleanup des 2 abonnements
-    return () => {
-      eventBus.off('game:joined', onGameJoined);
-      eventBus.off('cart:updated', onCartUpdated);
-    };
+    // TODO 1: const unsub1 = eventBus.on('game:joined', () => setNotifications(n => n + 1))
+    // TODO 2: const unsub2 = eventBus.on('cart:updated', ({ count }) => setCartCount(count))
+    // TODO 3: return () => { unsub1(); unsub2(); }
   }, []);
 
   return (

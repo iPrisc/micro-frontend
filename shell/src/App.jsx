@@ -1,10 +1,10 @@
 import React, { Suspense, lazy } from 'react';
 import './App.css';
 
-const Header = lazy(() => import('mfeHeader/Navbar'));
-const Lobby = lazy(() => import('mfeLobby/Lobby'));
-const Catalog = lazy(() => import('mfeCatalog/Catalog'));
-const Cart = lazy(() => import('mfeCart/Cart'));
+const Header = lazy(() => import('mfeHeader/./Navbar'));
+const Lobby = lazy(() => import('mfeLobby/./Lobby'));
+const Catalog = lazy(() => import('mfeCatalog/./Catalog'));
+const Cart = lazy(() => import('mfeCart/./Cart'));
 
 function LoadingFallback({ name }) {
   return (

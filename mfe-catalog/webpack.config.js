@@ -35,10 +35,15 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      // TODO 1 : name — comment ce MFE s'annonce sur le réseau ?
-      // TODO 2 : filename — quel fichier le Shell va-t-il charger ?
-      // TODO 3 : exposes — quel composant expose-t-on ? (clé → chemin fichier)
-      // TODO 4 : shared — quelles libs partager avec le Shell ?
+      name: 'catalog',                 // TODO 1
+      filename: 'remoteEntry.js',      // TODO 2
+      exposes: {                       // TODO 3
+        './App': './src/App.jsx',
+      },
+      shared: {                        // TODO 4
+      react: { singleton: true, requiredVersion: false },
+      'react-dom': { singleton: true, requiredVersion: false },
+      },
     }),
     new HtmlWebpackPlugin({ template: './public/index.html' }),
   ],

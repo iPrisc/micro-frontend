@@ -1,8 +1,8 @@
 import React, { Suspense, lazy } from 'react';
 import './App.css';
 
-const Header = lazy(() => import('mfeHeader/./Navbar'));
-const Lobby = lazy(() => import('mfeLobby/./Lobby'));
+const Header = lazy(() => import('mfeHeader/Navbar'));
+const Lobby = lazy(() => import('mfeLobby/Lobby'));
 
 function LoadingFallback({ name }) {
   return (

@@ -47,7 +47,8 @@ module.exports = {
       name: 'shell',
       remotes: {
         mfeHeader: 'mfeHeader@http://localhost:3001/remoteEntry.js',
-        mfeLobby: 'mfeLobby@http://localhost:3002/remoteEntry.js',
+        mfeLobby:  'mfeLobby@http://localhost:3002/remoteEntry.js',
+        // TODO: déclarer mfe-catalog comme remote (port 3003)
       },
       shared: {
         react: { singleton: true, requiredVersion: '^18.2.0' },

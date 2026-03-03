@@ -11,9 +11,16 @@ const GAMES = [
 
 function GameCard({ game }) {
   const handleJoinGame = () => {
-    // TODO: notifie l'eventBus que l'utilisateur a rejoint une partie
-    eventBus.emit('game:joined')
+    // TODO 3: Emettre l'evenement 'game:joined' avec le nom de la partie
+    //
+    // Indice: eventBus.emit('nomEvenement', { cle: valeur })
+    //
+    // L'evenement doit contenir: { gameName: game.name }
+    //
+    // Ecrivez votre code ici:
 
+
+    // Feedback visuel (gardez cette ligne)
     alert(`Vous avez rejoint : ${game.name}`);
   };
 
@@ -49,6 +56,9 @@ function Lobby() {
         ))}
       </div>
 
+      <div className="lobby-hint">
+        <p>Cliquez sur "Rejoindre" pour envoyer un evenement au Header !</p>
+      </div>
     </div>
   );
 }

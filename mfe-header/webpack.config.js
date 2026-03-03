@@ -41,11 +41,21 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      // TODO 1: name: 'mfeHeader',
-      // TODO 2: filename: 'remoteEntry.js',
-      // TODO 3: exposes: { './Navbar': './src/components/Navbar' },
-      // TODO 4: shared: { react: { singleton: true, requiredVersion: '^18.2.0' }, 'react-dom': { singleton: true, requiredVersion: '^18.2.0' } },
-    }),
+    // TODO 1
+    name: 'mfeHeader',
+
+    // TODO 2
+    filename: 'remoteEntry.js',
+
+    // TODO 3
+    exposes: { './Navbar': './src/components/Navbar' },
+
+    // TODO 4
+    shared: {
+      react: { singleton: true, requiredVersion: '^18.2.0' },
+      'react-dom': { singleton: true, requiredVersion: '^18.2.0' },
+    },
+  }),
     new HtmlWebpackPlugin({
       template: './public/index.html',
     }),

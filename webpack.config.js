@@ -49,8 +49,8 @@ module.exports = {
 
       // TODO 3: Configurer les dependances partagees
       shared: {
-        react: { singleton: true },
-        'react-dom': { singleton: true },
+        react: { singleton: true, requiredVersion: '^18.2.0' },
+        'react-dom': { singleton: true, requiredVersion: '^18.2.0' },
       },
     }),
     new HtmlWebpackPlugin({

@@ -38,12 +38,16 @@ module.exports = {
   },
   resolve: {
     extensions: ['.js', '.jsx'],
+    alias: {
+      shared: path.resolve(__dirname, '../shared'),
+    },
   },
   plugins: [
     new ModuleFederationPlugin({
       name: 'shell',
       remotes: {
         mfeHeader: 'mfeHeader@http://localhost:3001/remoteEntry.js',
+        mfeLobby: 'mfeLobby@http://localhost:3002/remoteEntry.js',
       },
       shared: {
         react: { singleton: true, requiredVersion: '^18.2.0' },
